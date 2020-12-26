@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="css/menu.css">
+  <link rel="stylesheet" href="style.css">
+   <link rel="stylesheet" href="stat.css">
+  <title>Pool d'eau</title>
+
+
+</head>
+<body>
+  <div class="menu-wrap">
+    <input type="checkbox" class="toggler">
+    <div class="hamburger"><div></div></div>
+    <div class="menu">
+      <div>
+        <div>
+          <ul>
+            <li><a href="index.php">Page principale</a></li>
+            <li><a href="info.html">Information</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="showcase">
+    <div>
+
+    <p> La première chose que nous avons déterminée est le terme qui devait prédominer, qui devait être de la forme (t(n-1)-t(n))/t. <br/>
+      Nous hésitions sur le temps entre t(n-1) et t(n) qui serait le plus pertinent au dénominateur<br/>
+      et nous avons convenu que la moyenne des deux serait le plus logique.<br/>
+        Ainsi, nous avons obtenu comme terme principal : 2*(t(n-1)-t(n))/(t(n-1)+t(n))<br/><br/>
+
+      Nous nous sommes ensuite dis que les temps précédents devaient intervenir et<br/>
+      que pour les moduler, utiliser la marge obtenue après le temps précédent permettait de tenir<br/>
+      compte de tous les temps relevés tout en diminuant l'importance des valeurs selon<br/>
+      l'ancienneté.
+      De plus, nous voulions que l'écart à notre marge précédente soit compté pour supposer d'une
+      surperformance ou sous-performance du Nageur.<br/>
+      Notre terme principal est alors multiplié par : (10*|t(n)-(1-M(n-1))*t(n-1)|\(t(n-1)+t(n))
+      Le 10 étant un entier choisit arbitrairement afin de donner une plus grande valeur aux
+      précédents termes<br/><br/>
+
+      Nous avons également convenu que la marge d'amélioration devait diminuer avec les années.<br/>
+      On multiplie alors notre marge par |40-n|/40.<br/>
+      Après 20 années de natation, la marge d'amélioration est d'elle-même divisée par deux
+      et elle est nulle après 40 années. Suppositions qui nous ont semblées cohérentes.<br/><br/>
+
+      Enfin, nous avons voulu rajouter un terme afin de faire en sorte que plus un nageur est loin d'un
+      temps optimal, plus il sera susceptible d'être irrégulier d'où, le terme :<br/>
+      (record personnel/record du club).<br/>
+
+      Nous obtenons ainsi notre marge :<br/>
+
+      2*(t(n-1)-t(n))/(t(n-1)+t(n))*(10*|t(n)-(1-M(n-1))*t(n-1)|\(t(n-1)+t(n))*(|40-n|/40)*(record personnel/record du club)<br/>
+
+
+      n : nombres d'années de natation du nageur<br/>
+      t(n): temps après n années de natation<br/>
+      M(n): marge prévue pour la n+1-ième année<br/>
+      |x| : valeur absolue de x<br/>
+      On a pu observer que la marge moyenne obtenue par les nageurs de notre base de données entre les 2 premières années est de 6,14%<br/>
+
+
+      Pour trouver la marge moyenne entre les 2 premières années, on a récupéré les 2 premiers temps de tous les nageurs dans la première nage qu'ils ont faite
+      Puis nous avons fait une moyenne de leur marge de progression entre ces 2 temps afin de trouver notre "marge (0)".<br/>
+
+
+      Cette marge est celle que nous avons retenue pour répondre à la demande client de prévoir
+      le meilleur temps de la saison suivante. Nous avons cependant décidé de rajouter une marge
+      qui prendrait en compte chaque performance du nageur dans sa nage et d'obtenir une marge
+      de progression théorique jusqu'à sa prochaine course.<br/>
+      Cette marge est identique à la précédente à l'exception du fait que l'on a retiré le terme
+      |40-n|/40 car il avait beaucoup moins de sens dans l'hypothèse de course fréquentes et
+      donc d'une progression le plus souvent beaucoup plus faible que d'une année à l'autre.<br/><br/>
+      
+        n devient alors le nombre de performances réalisées. </p>
+
+
+    </div>
+
+  </header>
+    	<section id="moi">
+		<br/>
+		<center style ="color : black">
+		En savoir plus sur Cergy Pontoise Natation :
+		</center>
+		<br/>
+		<center>
+	<a title="" href="https://www.cergypontoisenatation.fr/"><img src="site.png" height="40" width="40"/></a> &nbsp; &nbsp;<a href="https://www.facebook.com/CPN95/"><img src="fb30.png" /></a>
+		</center>
+
+		<br/>
+		<center>
+		<figure>
+		<img src="copy.png" height="40" width="40">
+
+		  <figcaption style ="color : black">by CAP'EISTI in 2019</figcaption>
+        </figure>
+		</center>
+		<br/>
+		<center>
+		<a href="https://capeisti.fr/"><img src="cap.png" height="50" width="140"/></a>
+		</center>
+		<br/>
+		<center style ="color : black">
+		Gonnet-Marty, Boisseau, Perrono, Rabahi, Toulza
+		</center>
+	<br/>
+
+		</section>
+
+      <footer>
+   </footer>
+</body>
+</html>
